@@ -40,7 +40,7 @@ const SearchBar = () => {
       <div className="w-[450px] inline-flex items-center justify-center border border-gray-400 px-5 py-2 my-8 rounded-full ">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="جستجو..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className=" flex-1 outline-none bg-inherit text-sm "

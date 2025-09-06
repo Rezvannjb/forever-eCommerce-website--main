@@ -17,12 +17,12 @@ const BestSeller = () => {
   }, []);
 
   return (
-    <div className="my-10">
+    <div className="my-10 font-yekan">
       <div className="text-center text-3xl py-8">
-        <Title text1={'BEST'} text2={'SELLERS'} />
+        <Title text1={'پرفروش'} text2={'ترین'} />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-          Our best-selling products that our customers can not get enough of.
-          Shop the most popular items from our store.
+          پرفروش‌ترین محصولات ما که مشتریان ما نمی‌توانند از آن‌ها سیر شوند.
+          محبوب‌ترین محصولات فروشگاه ما را خریداری کنید.
         </p>
       </div>
 

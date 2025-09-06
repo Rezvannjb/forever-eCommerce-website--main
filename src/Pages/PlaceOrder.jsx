@@ -15,57 +15,57 @@ const PlaceOrder = () => {
 
       <div className="flex flex-col gap-4 w-full sm:max-w-[480px]">
         <div className="text-xl sm:text-2xl my-3 ">
-          <Title text1={'DELIVERY'} text2={'INFORMATION'} />
+          <Title text1={'اطلاعات'} text2={'تحویل'} />
         </div>
         <div className="flex flex-col sm:flex-row  gap-3">
           <input
             type="text"
-            placeholder="First Name"
+            placeholder="نام"
             className="border  border-gray-300 rounded py-1.5 px-3.5 w-full"
           />
           <input
             type="text"
-            placeholder="Last Name"
+            placeholder="نام خانوادگی"
             className="border  border-gray-300 rounded py-1.5 px-3.5 w-full"
           />
         </div>
         <input
           type="email"
-          placeholder="Email Address"
+          placeholder="آدرس ایمیل"
           className="border  border-gray-300 rounded py-1.5 px-3.5 w-full"
         />
         <input
           type="text"
-          placeholder="Street"
+          placeholder="خیابان"
           className="border  border-gray-300 rounded py-1.5 px-3.5 w-full"
         />
         <div className="flex flex-col sm:flex-row  gap-3">
           <input
             type="text"
-            placeholder="City"
+            placeholder="شهر"
             className="border  border-gray-300 rounded py-1.5 px-3.5 w-full"
           />
           <input
             type="text"
-            placeholder="State"
+            placeholder="استان"
             className="border  border-gray-300 rounded py-1.5 px-3.5 w-full"
           />
         </div>
         <div className="flex flex-col sm:flex-row  gap-3">
           <input
             type="text"
-            placeholder="Zipcode"
+            placeholder="کد پستی"
             className="border  border-gray-300 rounded py-1.5 px-3.5 w-full"
           />
           <input
             type="text"
-            placeholder="Country"
+            placeholder="کشور"
             className="border  border-gray-300 rounded py-1.5 px-3.5 w-full"
           />
         </div>
         <input
           type="number"
-          placeholder="Phone "
+          placeholder="تلفن"
           className="border  border-gray-300 rounded py-1.5 px-3.5 w-full"
         />
       </div>
@@ -78,7 +78,7 @@ const PlaceOrder = () => {
         </div>
 
         <div className="mt-12">
-          <Title text1={'PAYMENT'} text2={'METHOD'} />
+          <Title text1={'روش'} text2={'پرداخت'} />
 
           {/* -------------- Payment method selection -------------- */}
 
@@ -122,7 +122,7 @@ const PlaceOrder = () => {
               ></p>
               <p className="text-gray-500 text-sm font-medium mx-4">
                 {' '}
-                CASH ON DELIVARY
+                پرداخت در محل
               </p>
             </div>
           </div>
@@ -134,7 +134,7 @@ const PlaceOrder = () => {
               onClick={() => navigate('/orders')}
               className="bg-black text-white px-16 py-3 text-sm"
             >
-              PLACE ORDER
+              ثبت سفارش
             </button>
           </div>
         </div>

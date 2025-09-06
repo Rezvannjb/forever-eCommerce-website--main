@@ -1,16 +1,16 @@
 const NewsLetterBox = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    alert('Subscribed successfully!');
+    alert('با موفقیت مشترک شدید!');
   };
 
   return (
     <div className="text-center">
       <p className="text-2xl font-medium text-gray-800">
-        Subscribe now & get 20% off
+        همین الان مشترک شوید و ۲۰٪ تخفیف بگیرید
       </p>
       <p className="text-gray-500 mt-3">
-        Be the first to know about new arrivals, sales & promos!
+        اولین کسی باشید که از محصولات جدید، فروش‌ها و پیشنهادات ویژه مطلع می‌شوید!
       </p>
 
       <form
@@ -19,7 +19,7 @@ const NewsLetterBox = () => {
       >
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder="ایمیل خود را وارد کنید"
           className="w-full sm:flex-1 outline-none "
           required
         />
@@ -27,7 +27,7 @@ const NewsLetterBox = () => {
           type="submit"
           className="bg-black text-white text-xs px-10 py-4 "
         >
-          Subscribe
+          مشترک شوید
         </button>
       </form>
     </div>

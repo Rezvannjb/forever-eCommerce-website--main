@@ -28,7 +28,7 @@ const Cart = () => {
   return (
     <div className="pt-14 border-t">
       <div className="mb-3 text-2xl">
-        <Title text1={'YOUR'} text2={'CART'} />
+        <Title text1={'سبد'} text2={'خرید شما'} />
       </div>
 
       {/* Cart Items      */}
@@ -105,7 +105,7 @@ const Cart = () => {
               }}
               className="my-8 px-8 py-3 bg-black text-white text-sm"
             >
-              PROCEED TO CHECKOUT
+              ادامه به پرداخت
             </button>
           </div>
         </div>

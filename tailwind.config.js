@@ -3,6 +3,10 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        'persian': ['Yekan', 'Vazir', 'Tahoma', 'Arial', 'sans-serif'],
+        'yekan': ['Yekan', 'Vazir', 'Tahoma', 'Arial', 'sans-serif'],
+      },
       keyframes: {
         'scale-up-center': {
           '0%': { transform: 'scale(0.5)' },

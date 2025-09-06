@@ -8,26 +8,27 @@ const Navbar = () => {
   const { setShowSearch, getCartCount } = useContext(ShopContext);
 
   return (
-    <div className="flex items-center justify-between py-5 font-medium">
+    <>
+    <div className="flex items-center justify-between py-5 font-medium font-yekan">
       <Link to="/">
         <img src={assets.logo} alt="logo" className="w-36" />
       </Link>
 
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
-          <p>HOME</p>
+          <p>خانه</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
-          <p>COLLECTION</p>
+          <p>مجموعه</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
-          <p>ABOUT</p>
+          <p>درباره ما</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
-          <p>CONTACT</p>
+          <p>تماس با ما</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
       </ul>
@@ -68,7 +69,6 @@ const Navbar = () => {
         />
       </div>
 
-      {/* Sidebar menu for small screens */}
       <div
         className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white ease-in duration-300
              ${visible ? 'w-full' : 'w-0'}`}
@@ -81,7 +81,7 @@ const Navbar = () => {
             className="flex items-center gap-4 p-3 cursor-pointer"
           >
             <img src={assets.dropdown_icon} alt="" className="h-4 rotate-180" />
-            <p className="font-semibold">Back</p>
+            <p className="font-semibold">بازگشت</p>
           </div>
 
           <NavLink
@@ -92,7 +92,7 @@ const Navbar = () => {
             to="/"
           >
             {' '}
-            HOME{' '}
+            خانه{' '}
           </NavLink>
           <NavLink
             onClick={() => {
@@ -102,7 +102,7 @@ const Navbar = () => {
             to="/collection"
           >
             {' '}
-            COLLECTION{' '}
+            مجموعه{' '}
           </NavLink>
           <NavLink
             onClick={() => {
@@ -112,7 +112,7 @@ const Navbar = () => {
             to="/about"
           >
             {' '}
-            ABOUT{' '}
+            درباره ما{' '}
           </NavLink>
           <NavLink
             onClick={() => {
@@ -122,11 +122,12 @@ const Navbar = () => {
             to="/contact"
           >
             {' '}
-            CONTACT{' '}
+            تماس با ما{' '}
           </NavLink>
         </div>
       </div>
-    </div>
+    
+    </>
   );
 };
 

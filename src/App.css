@@ -1,0 +1,52 @@
+/* RTL specific styles */
+.rtl-layout {
+  direction: rtl;
+}
+
+.ltr-content {
+  direction: ltr;
+}
+
+/* Fix for flexbox in RTL */
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Fix for text alignment in RTL */
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Fix for margins and padding in RTL */
+.mr-auto {
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+/* Fix for icons and numbers that should remain LTR */
+.icon, .number, .price, .currency {
+  direction: ltr;
+  display: inline-block;
+}
+
+/* Fix for input placeholders in RTL */
+input::placeholder {
+  text-align: right;
+}
+
+/* Fix for select elements in RTL */
+select {
+  text-align: right;
+}
+
+/* Fix for button text alignment */
+button {
+  text-align: center;
+}

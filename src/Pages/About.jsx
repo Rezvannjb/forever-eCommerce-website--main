@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div>
       <div className="text-2xl text-center pt-8 border-t">
-        <Title text1={'ABOUT'} text2={'US'} />
+        <Title text1={'درباره'} text2={'ما'} />
       </div>
 
       <div className="flex flex-col md:flex-row gap-16 my-10">
@@ -18,55 +18,40 @@ const About = () => {
 
         <div className="flex flex-col justify-center gap-6 md:w-2/4 text-gray-600">
           <p>
-            Forever was born out of a passion for innovation and a desire to
-            revolutionize the way people shop online. Our journey began with a
-            simple idea to provide a platform where customers can easily
-            discover, explore, and purchase a wide range of products from the
-            comfort of their homes.
+            فوراور از شور و اشتیاق برای نوآوری و تمایل به انقلاب در نحوه خرید آنلاین مردم متولد شد. سفر ما با ایده ساده‌ای برای ارائه پلتفرمی آغاز شد که مشتریان بتوانند به راحتی طیف وسیعی از محصولات را از راحتی خانه‌هایشان کشف، کاوش و خریداری کنند.
           </p>
           <p>
-            Since our inception, we&apos;ve worked firelessly to curate a
-            diverse selection of high-quality products that cater to every taste
-            and preference. From fashion and beauty to electronics and home
-            essentials, we offer an extensive collection sourced from frusted
-            brands and suppliers.
+            از زمان تأسیس، ما بی‌وقفه کار کرده‌ایم تا مجموعه متنوعی از محصولات باکیفیت بالا را گردآوری کنیم که به هر سلیقه و ترجیحی پاسخ دهد. از مد و زیبایی گرفته تا الکترونیک و لوازم ضروری خانه، ما مجموعه گسترده‌ای از برندها و تأمین‌کنندگان مورد اعتماد ارائه می‌دهیم.
           </p>
-          <b className="text-gray-800">Our Mission</b>
+          <b className="text-gray-800">ماموریت ما</b>
           <p>
             {' '}
-            Our Mission Our mission of Forever is to empower customers with
-            choice, convenience, and confidence. We`\re dedicated to providing a
-            seamless shopping experience that exceeds expectations, from
-            browsing and ordering to delivery and beyond.
+            ماموریت فوراور این است که مشتریان را با انتخاب، راحتی و اعتماد به نفس توانمند سازد. ما متعهد به ارائه تجربه خرید بی‌نقصی هستیم که از انتظارات فراتر رود، از مرور و سفارش تا تحویل و فراتر از آن.
           </p>
         </div>
       </div>
 
       <div className="py-4 text-2xl">
-        <Title text1={'WHY'} text2={'CHOOSE US'} />
+        <Title text1={'چرا'} text2={'ما را انتخاب کنید'} />
       </div>
 
       <div className="flex flex-col md:flex-row mb-20 text-sm gap-4">
         <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
-          <b>Quality Assurance</b>
+          <b>ضمانت کیفیت</b>
           <p className="text-gray-600">
-            We take pride in offering only the highest quality products that
-            meet our stringent standards for durability, performance, and value.{' '}
+            ما افتخار می‌کنیم که فقط محصولات با بالاترین کیفیت را ارائه می‌دهیم که استانداردهای سختگیرانه ما را برای دوام، عملکرد و ارزش برآورده می‌کنند.
           </p>
         </div>
         <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
-          <b>Convenience</b>
+          <b>راحتی</b>
           <p className="text-gray-600">
-            Our user-friendly website and mobile app make it easy to browse,
-            compare, and purchase products on the go.{' '}
+            وب‌سایت و اپلیکیشن موبایل کاربرپسند ما مرور، مقایسه و خرید محصولات در حال حرکت را آسان می‌کند.
           </p>
         </div>
         <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
-          <b>Exceptional Customer Services</b>
+          <b>خدمات مشتری استثنایی</b>
           <p className="text-gray-600">
-            Our dedicated team of customer service representatives is available
-            around the clock to assist you with any queries or concerns you may
-            have.{' '}
+            تیم متخصص نمایندگان خدمات مشتری ما ۲۴ ساعته در دسترس است تا در هر سوال یا نگرانی که ممکن است داشته باشید به شما کمک کند.
           </p>
         </div>
       </div>

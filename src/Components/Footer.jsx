@@ -15,32 +15,31 @@ const Footer = () => {
         <div className="">
           <img src={assets.logo} alt="" className="mb-5 w-32 " />
           <p className="w-full sm:w-2/3 text-gray-600">
-            Shop with Forever and experience the convenience of online shopping
-            like never before.
+            با فوراور خرید کنید و راحتی خرید آنلاین را مانند هرگز قبل تجربه کنید.
           </p>
         </div>
 
         <div className="">
-          <p className="text-xl font-medium mb-5">COMPANY</p>
+          <p className="text-xl font-medium mb-5">شرکت</p>
 
           <ul className="flex flex-col flex-1 text-gray-600 cursor-pointer">
             <li onClick={scrollToTop} className="mb-2">
-              Home
+              خانه
             </li>
             <li onClick={scrollToTop} className="mb-2">
-              About Us
+              درباره ما
             </li>
             <li onClick={scrollToTop} className="mb-2">
-              Delivery
+              ارسال
             </li>
             <li onClick={scrollToTop} className="mb-2">
-              Privacy policy
+              حریم خصوصی
             </li>
           </ul>
         </div>
 
         <div className="">
-          <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
+          <p className="text-xl font-medium mb-5">تماس با ما</p>
           <ul className="flex flex-col flex-1 text-gray-600">
             <li className="mb-2">+123 456 7890</li>
             <li className="mb-2">contact@forevryou.com </li>
@@ -50,7 +49,7 @@ const Footer = () => {
       <div>
         <hr />
         <p className="py-5 text-sm text-center">
-          Copyright 2024@ forever.com - All Rights Reserved
+          کپی رایت ۱۴۰۳@ forever.com - تمامی حقوق محفوظ است
         </p>
       </div>
     </div>

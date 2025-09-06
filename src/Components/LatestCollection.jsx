@@ -15,10 +15,9 @@ const LatestCollection = () => {
   return (
     <div className="my-10">
       <div className="py-8 text-center text-3xl">
-        <Title text1={'LATEST'} text2={'COLLECTIONS'} />
+        <Title text1={'جدیدترین'} text2={'مجموعه'} />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-          Discover our newest arrivals that blend style and comfort. Explore the
-          latest trends in fashion, curated just for you.
+          جدیدترین محصولات ما را کشف کنید که استایل و راحتی را ترکیب می‌کنند. آخرین ترندهای مد را که مخصوص شما انتخاب شده‌اند، کاوش کنید.
         </p>
       </div>
 

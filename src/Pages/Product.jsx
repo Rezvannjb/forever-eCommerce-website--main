@@ -79,7 +79,7 @@ const Product = () => {
           </p>
 
           <div className="flex flex-col gap-4 my-8">
-            <p className="">Select Size</p>
+            <p className="">انتخاب سایز</p>
             <div className="flex gap-2">
               {productsData.sizes.map((item, index) => (
                 <button
@@ -101,15 +101,15 @@ const Product = () => {
             onClick={() => addToCart(productsData._id, size)}
             className="bg-black text-white py-3 px-8 text-sm active:bg-gray-700"
           >
-            ADD TO CART
+            افزودن به سبد خرید
           </button>
 
           <hr className="mt-8 sm:w-4/5" />
 
           <div className="flex flex-col gap-1 mt-5 text-sm text-gray-500">
-            <p>100% Original product </p>
-            <p>Free delivery on order above $49</p>
-            <p> Easy return and exchange policy within 7 days </p>
+            <p>محصول ۱۰۰٪ اصل</p>
+            <p>ارسال رایگان برای سفارشات بالای ۴۹ دلار</p>
+            <p>سیاست بازگشت و تعویض آسان در عرض ۷ روز</p>
           </div>
         </div>
       </div>
@@ -118,8 +118,8 @@ const Product = () => {
 
       <div className="mt-10">
         <div className="flex">
-          <b className="px-5 py-3 text-sm border">Description</b>
-          <p className="px-5 py-3 text-sm border">Reviews (122)</p>
+          <b className="px-5 py-3 text-sm border">توضیحات</b>
+          <p className="px-5 py-3 text-sm border">نظرات (۱۲۲)</p>
         </div>
 
         <div className=" flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500 ">

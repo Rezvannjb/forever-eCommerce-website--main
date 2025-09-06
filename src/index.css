@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
+
+@font-face {
+  font-family: 'Yekan';
+  src: url('./assets/fonts/Yekan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +18,8 @@ a.active hr {
 }
 
 * {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Yekan', 'Vazir', 'Tahoma', 'Arial', sans-serif;
+  direction: rtl;
 }
 
 .prata-regular {
@@ -18,9 +28,25 @@ a.active hr {
   font-style: normal;
 }
 
+/* RTL specific styles */
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+/* Fix for icons and numbers that should remain LTR */
+.icon, .number, .price {
+  direction: ltr;
+  display: inline-block;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
+
 @media (max-width: 640px) {
   a.active {
     background-color: black;
