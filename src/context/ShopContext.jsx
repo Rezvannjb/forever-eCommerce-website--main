@@ -1,24 +1,37 @@
-import PropTypes from 'prop-types';
-import { createContext, useState } from 'react';
-import { products } from '../assets/assets';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import PropTypes from "prop-types";
+import { createContext, useEffect, useState } from "react";
+// import { products } from '../assets/assets';
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { supabase } from "../lib/supabase";
 
 export const ShopContext = createContext();
 
 const ShopContextProvider = ({ children }) => {
-  const currency = '$';
+  const currency = "T";
   const delivery_fee = 10;
 
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [cartItems, setCartItems] = useState({});
   const [orders, setOrders] = useState([]); // New state to hold orders
   const navigate = useNavigate(); // to navigate to different pages
-
+  const [products, setProducts] = useState([]);
+  async function getProduct() {
+    try {
+      const { data, error } = await supabase.from("products").select("*");
+      setProducts(data);
+      console.log("context", data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  useEffect(() => {
+    getProduct();
+  }, []);
   const addToCart = async (itemId, size) => {
     if (!size) {
-      toast.error('Please select a size');
+      toast.error("لطفا یک سایز انتخاب");
       return;
     }
 
@@ -76,14 +89,14 @@ const ShopContextProvider = ({ children }) => {
   const getCartAmount = () => {
     let totalAmount = 0;
     for (const item in cartItems) {
-      const productInfo = products.find((product) => product._id === item);
+      const productInfo = products.find((product) => product.id === item);
       for (const size in cartItems[item]) {
         try {
           if (cartItems[item][size] > 0) {
-            totalAmount += productInfo.price * cartItems[item][size];
+            totalAmount += productInfo?.price * cartItems[item][size];
           }
         } catch (error) {
-          console.log('error', error);
+          console.log("error", error);
         }
       }
     }

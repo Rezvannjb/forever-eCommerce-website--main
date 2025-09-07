@@ -1,19 +1,36 @@
-import { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { ShopContext } from '../context/ShopContext';
-import { assets } from '../assets/assets';
-import RelatedProducts from '../components/RelatedProducts';
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { ShopContext } from "../context/ShopContext";
+import { assets } from "../assets/assets";
+import RelatedProducts from "../components/RelatedProducts";
+import { supabase } from "../lib/supabase";
 
 const Product = () => {
   const { productId } = useParams();
-  const { products, currency, addToCart } = useContext(ShopContext);
+  const { currency, addToCart } = useContext(ShopContext);
+  const [products, setProducts] = useState([]);
   const [productsData, setProductsData] = useState(false);
-  const [image, setImage] = useState('');
-  const [size, setSize] = useState('');
-
+  const [image, setImage] = useState("");
+  const [size, setSize] = useState("");
+  const [isLoading, setIsloading] = useState(false);
+  async function getProduct() {
+    try {
+      setIsloading(true);
+      const { data, error } = await supabase.from("products").select("*");
+      setProducts(data);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsloading(false);
+    }
+  }
+  useEffect(() => {
+    getProduct();
+  }, []);
   const fetchProductsData = async () => {
     products.map((product) => {
-      if (product._id === productId) {
+      if (product.id === productId) {
         setProductsData(product);
         setImage(product.image[0]);
 
@@ -33,23 +50,10 @@ const Product = () => {
         {/* ---------------------- products images ---------------------- */}
 
         <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row ">
-          {/* ---------------------- List images ----------------------*/}
-          <div className="flex sm:flex-col  overflow-x-auto sm:overflow-y-scroll justify-between  sm:justify-normal sm:w-[18.7%] w-full">
-            {productsData.image.map((item, index) => (
-              <img
-                key={index}
-                src={item}
-                alt="product"
-                onClick={() => setImage(item)}
-                className="cursor-pointer w-[24%]  sm:w-full sm:mb-3 flex-shrink-0  object-cover"
-              />
-            ))}
-          </div>
-
           {/*---------------------- main img---------------------- */}
           <div className="w-full sm:w-[80%]">
             <img
-              src={image}
+              src={productsData.image}
               alt="product"
               className="w-full h-auto object-cover"
             />
@@ -88,7 +92,7 @@ const Product = () => {
                     setSize(item);
                   }}
                   className={`w-8 h-8 border bg-gray-100 flex items-center justify-center cursor-pointer
-                  ${item === size ? 'border-orange-500' : ''}
+                  ${item === size ? "border-orange-500" : ""}
                   `}
                 >
                   {item}
@@ -98,7 +102,7 @@ const Product = () => {
           </div>
 
           <button
-            onClick={() => addToCart(productsData._id, size)}
+            onClick={() => addToCart(productsData.id, size)}
             className="bg-black text-white py-3 px-8 text-sm active:bg-gray-700"
           >
             افزودن به سبد خرید

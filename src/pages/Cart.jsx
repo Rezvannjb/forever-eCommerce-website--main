@@ -1,21 +1,40 @@
-import { useContext, useEffect, useState } from 'react';
-import { ShopContext } from '../context/ShopContext';
-import Title from '../components/Title';
-import { assets } from '../assets/assets';
-import CartTotal from '../components/CartTotal';
+import { useContext, useEffect, useState } from "react";
+import { ShopContext } from "../context/ShopContext";
+import Title from "../components/Title";
+import { assets } from "../assets/assets";
+import CartTotal from "../components/CartTotal";
+import { supabase } from "../lib/supabase";
 
 const Cart = () => {
-  const { products, currency, cartItems, updateQuantity, navigate, addOrder } =
+  const { cartItems, updateQuantity, navigate, addOrder } =
     useContext(ShopContext);
+    console.log("cart",cartItems);
+    
   const [cartData, setCartData] = useState([]);
-
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsloading] = useState(false);
+  async function getProduct() {
+    try {
+      setIsloading(true);
+      const { data, error } = await supabase.from("products").select("*");
+      setProducts(data);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsloading(false);
+    }
+  }
+  useEffect(() => {
+    getProduct();
+  }, []);
   useEffect(() => {
     let tempData = [];
     for (const item in cartItems) {
       for (const size in cartItems[item]) {
         if (cartItems[item][size] > 0) {
           tempData.push({
-            _id: item,
+            id: item,
             size: size,
             quantity: cartItems[item][size],
           });
@@ -23,20 +42,23 @@ const Cart = () => {
       }
     }
     setCartData(tempData);
+    console.log("this is ",tempData);
+    
+    
   }, [cartItems]);
-
+  if (isLoading) return <h1>درحال بارگزاری...</h1>;
   return (
     <div className="pt-14 border-t">
       <div className="mb-3 text-2xl">
-        <Title text1={'سبد'} text2={'خرید شما'} />
+        <Title text1={"سبد"} text2={"خرید شما"} />
       </div>
 
       {/* Cart Items      */}
 
       <div>
         {cartData.map((item, index) => {
-          const productsData = products.find(
-            (product) => product._id === item._id
+          const productsData = products?.find(
+            (product) => product.id === item.id
           );
 
           return (
@@ -45,20 +67,16 @@ const Cart = () => {
               className="py-3 border-b border-t text-gray-700 grid  grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4"
             >
               <div className="flex items-start gap-6">
-                <img
-                  src={productsData.image[0]}
-                  alt=""
-                  className="w-16 sm:w-20"
-                />
+                <img src={productsData?.image} alt="" className="w-16 sm:w-20" />
                 <div>
                   <p className="text-sm sm:text-lg font-medium">
-                    {productsData.name}
+                    {productsData?.name}
                   </p>
 
                   <div className="flex items-center gap-5 mt-2">
                     <p className=" ">
-                      {currency}
-                      {productsData.price}
+
+                      {productsData?.price}
                     </p>
                     <p className="px-2 sm:px-3 sm:py-1 border bg-slate-50 ">
                       {item.size}
@@ -69,7 +87,7 @@ const Cart = () => {
 
               <input
                 onChange={(e) => {
-                  e.target.value === '' || e.target.value < 0
+                  e.target.value === "" || e.target.value < 0
                     ? null
                     : updateQuantity(
                         item._id,
@@ -101,7 +119,7 @@ const Cart = () => {
             <button
               onClick={() => {
                 addOrder(); // Call addOrder to move items to orders state
-                navigate('/place-order');
+                navigate("/place-order");
               }}
               className="my-8 px-8 py-3 bg-black text-white text-sm"
             >

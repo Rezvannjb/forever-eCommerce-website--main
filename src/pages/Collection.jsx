@@ -101,6 +101,7 @@ const Collection = () => {
   useEffect(() => {
     sortProducts();
   }, [sortType]);
+  if (isLoading) return <h1>درحال بارگزاری...</h1>;
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
       {/* Filter Option */}
@@ -223,16 +224,14 @@ const Collection = () => {
           </select>
         </div>
 
-        {/* Product List */}
-
         <div className="grid grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-6">
           {filterProducts?.map((product) => (
             <ProductItem
-              key={product?._id}
-              id={product?._id}
-              image="url"
-              name={product?.name}
-              price={product?.price}
+              key={product.id}
+              id={product.id}
+              image={product.image ?? "url"}
+              name={product.name}
+              price={product.price}
             />
           ))}
         </div>
