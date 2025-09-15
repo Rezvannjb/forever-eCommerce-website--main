@@ -1,13 +1,11 @@
-import { useContext, useEffect, useState } from 'react';
-import { ShopContext } from '../context/ShopContext';
-import Title from './Title';
-import ProductItem from './ProductItem';
+import { useContext, useEffect, useState } from "react";
+import { ShopContext } from "../context/ShopContext";
+import Title from "./Title";
+import ProductItem from "./ProductItem";
 
 const BestSeller = () => {
   const { products } = useContext(ShopContext);
   const [bestSeller, setBestSeller] = useState([]);
-
-  console.log(bestSeller);
 
   useEffect(() => {
     if (products) {
@@ -19,7 +17,7 @@ const BestSeller = () => {
   return (
     <div className="my-10 font-yekan">
       <div className="text-center text-3xl py-8">
-        <Title text1={'پرفروش'} text2={'ترین'} />
+        <Title text1={"پرفروش"} text2={"ترین"} />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
           پرفروش‌ترین محصولات ما که مشتریان ما نمی‌توانند از آن‌ها سیر شوند.
           محبوب‌ترین محصولات فروشگاه ما را خریداری کنید.
